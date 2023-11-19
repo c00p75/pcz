@@ -1,0 +1,37 @@
+.logo img {
+  height: 3em !important;
+  width: auto !important;
+}
+
+.logo span {
+  color: var(--secondaryTextColor);
+  line-height: 1em;
+}
+
+.scrolled-navbar {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em 0;
+  transition: 0.32s ease-in-out;
+  box-shadow: 0 0.125rem 0.25rem gray;
+}
+
+#off-canvas-menu ul {
+  list-style: none;
+}
+
+#off-canvas-menu li {
+  margin: 1em 0;
+  padding: 1em 0;
+}
+
+#off-canvas-menu li a {
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.offcanvas-header .btn-close {
+  display: none;
+}
