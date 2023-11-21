@@ -60,7 +60,6 @@ const Nav = () => {
               <li><Link href="/sermons"><span className="link-text">Sermons</span></Link></li>
               <li><Link href="/events"><span className="link-text">Events</span></Link></li>
               <li><Link href="/about"><span className="link-text">About</span></Link></li>
-              <li><Link href="/apps"><span className="link-text">Apps</span></Link></li>
               <li style={{ display: 'block' }}>
                 <Accordion>
                   <Accordion.Item eventKey="0">
