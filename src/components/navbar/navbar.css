@@ -27,11 +27,53 @@
   padding: 1em 0;
 }
 
-#off-canvas-menu li a {
+#off-canvas-menu .link-text {
   font-weight: 500;
   font-size: 1.2em;
+  padding: 0.5em;
+  color: var(--secondaryTextColor);
 }
 
-.offcanvas-header .btn-close {
-  display: none;
+#off-canvas-menu .active .link-text {
+  box-shadow: 0 5px 3px -4px teal;
+  color: teal ;
+  font-weight: bolder;
+}
+
+#off-canvas-menu .offcanvas-body {
+  margin-top: 2em;
+}
+
+#off-canvas-menu .close-btn {
+  position: absolute;
+  width: fit-content;
+  right: 1em;
+  top: 1em;
+}
+
+#off-canvas-menu .accordion-item {
+  position: relative;
+  border: none;
+}
+
+#off-canvas-menu .accordion-item > a {
+  position: absolute;
+  z-index: 9;
+  width: 80%;
+  height: 100%;
+  display: flex;
+}
+
+#off-canvas-menu .accordion-item .accordion-button {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+#off-canvas-menu .accordion-item .accordion-button:not(.collapsed) {
+  background-color: aliceblue;
+  box-shadow: none;
+}
+
+#off-canvas-menu .accordion-item .accordion-body ul {
+  padding-left: 0.5em;
 }

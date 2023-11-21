@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
 import './navbar.css';
-import { Button, Offcanvas } from 'react-bootstrap';
+import { Button, Offcanvas, Accordion } from 'react-bootstrap';
 import Link from 'next/link';
 
 const Nav = () => {
@@ -47,24 +47,48 @@ const Nav = () => {
           </svg>
         </Button>
 
-        <Offcanvas show={show} onHide={handleClose} placement={'end'}>
-          <Offcanvas.Header closeButton className="justify-content-end">
-            <button type="button" onClick={() => setShow(false)}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" />
-                  <path fill="black" d="m12 14.121l5.303 5.304a1.5 1.5 0 0 0 2.122-2.122L14.12 12l5.304-5.303a1.5 1.5 0 1 0-2.122-2.121L12 9.879L6.697 4.576a1.5 1.5 0 1 0-2.122 2.12L9.88 12l-5.304 5.303a1.5 1.5 0 1 0 2.122 2.122L12 14.12Z" />
-                </g>
-              </svg>
-            </button>
-          </Offcanvas.Header>
-          <Offcanvas.Body id="off-canvas-menu">
+        <Offcanvas show={show} onHide={handleClose} placement={'end'} id="off-canvas-menu">
+          <button type="button" className="close-btn" onClick={() => setShow(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 32 32">
+              <path fill="#1e283a" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4l-1.6 1.6z" />
+            </svg>
+          </button>
+          <Offcanvas.Body>
             <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/sermons">Sermons</Link></li>
-              <li><Link href="/events">Events</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/announcements">Announcements</Link></li>
+              <li><Link href="/"><span className="link-text">Home</span></Link></li>
+              <li><Link href="/announcements" className="active"><span className="link-text">Announcements</span></Link></li>
+              <li><Link href="/sermons"><span className="link-text">Sermons</span></Link></li>
+              <li><Link href="/events"><span className="link-text">Events</span></Link></li>
+              <li><Link href="/about"><span className="link-text">About</span></Link></li>
+              <li><Link href="/apps"><span className="link-text">Apps</span></Link></li>
+              <li>
+                <Accordion>
+                  <Accordion.Item eventKey="0">
+                    <Link href="/fellowships">
+                      <span className="link-text">Fellowships</span>
+                    </Link>
+                    <Accordion.Header />
+                    <Accordion.Body>
+                      <ul>
+                        <li><Link href="/fellowships/youth"><span className="link-text">Youth</span></Link></li>
+                        <li><Link href="/fellowships/women"><span className="link-text">Women</span></Link></li>
+                        <li><Link href="/fellowships/men"><span className="link-text">Men</span></Link></li>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                  <Accordion.Item eventKey="1">
+                  <Link href="/apps">
+                      <span className="link-text">Apps</span>
+                    </Link>
+                    <Accordion.Header />
+                    <Accordion.Body>
+                      <ul>
+                        <li><Link href="/apps/hymn"><span className="link-text">Hymns</span></Link></li>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+              </li>
             </ul>
           </Offcanvas.Body>
         </Offcanvas>
