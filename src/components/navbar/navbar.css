@@ -25,6 +25,11 @@
 #off-canvas-menu li {
   margin: 1em 0;
   padding: 1em 0;
+  display: flex;
+}
+
+#off-canvas-menu li a {
+  width: 100%;
 }
 
 #off-canvas-menu .link-text {
@@ -54,13 +59,13 @@
 #off-canvas-menu .accordion-item {
   position: relative;
   border: none;
+  margin-bottom: 1.25em;
 }
 
 #off-canvas-menu .accordion-item > a {
   position: absolute;
   z-index: 9;
   width: 80%;
-  height: 100%;
   display: flex;
 }
 
