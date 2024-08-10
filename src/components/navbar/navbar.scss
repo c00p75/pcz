@@ -31,7 +31,7 @@
 
 #burger-menu {
   @media (width < 992px) {
-    width: 2em !important;
+    width: 1.5em !important;
   }
 }
 
@@ -56,7 +56,7 @@
 
 #offcanvasNavbar-expand-lg.show {
   .link-text {
-    color: black !important;
+    color: var(--secondaryTextColor);
   }
 }
 
@@ -161,6 +161,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (width < 992px) {
+    margin-right: 10%;
+    background: tomato;
+
+    span {
+      text-transform: uppercase;
+      color: white !important;
+      font-weight: bolder;
+    }
+  }
 }
 
 @media (min-width: 992px) {

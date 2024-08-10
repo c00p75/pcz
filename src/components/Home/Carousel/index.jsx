@@ -45,10 +45,11 @@ function HomeCarousel() {
       <Carousel.Item className="full-screen cover-container">
         <Image src={cover_1} alt="pcz logo" quality={100} />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>
+            {`"Come to me, all who labor and are heavy laden, and I will give you
+            rest."`}
+          </h3>
+          <p>Matthew 11:28</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item className="full-screen cover-container">
@@ -73,12 +74,12 @@ function HomeCarousel() {
           quality={100}
           style={{ objectPosition: "50% 20%" }}
         />
-        <Carousel.Caption>
+        {/* <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
-        </Carousel.Caption>
+        </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item className="full-screen cover-container">
         <Image
